@@ -2,8 +2,9 @@ import requests
 from bs4 import BeautifulSoup
 import re
 import time
-import boyer
+import boyer_for_main2
 import wikipedia
+
 
 
 # link = "https://ru.wikipedia.org/wiki/Логика"
