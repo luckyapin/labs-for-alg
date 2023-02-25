@@ -27,7 +27,7 @@ start_time = time.time()
 for i, pat in enumerate(words_in_ref):
     if len(words_in_ref)-2<i:
         break
-    c += boyer.boyer(words_in_article, words_in_ref[i:i+3])
+    c += boyer_for_main2.boyer(words_in_article, words_in_ref[i:i+3])
 
 print(str(c/len(words_in_article)*100)+"%")
 print("--- %s seconds ---" % (time.time() - start_time))
