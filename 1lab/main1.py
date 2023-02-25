@@ -30,7 +30,7 @@ for i in range(10,100):
 print('По Бойеру:')
 print('Самое частое число встречается',max(mas),'раз')
 for i in range(10,100):
-    mas[i]=knyt(s[:],str(i))
+    mas[i]=knyt(s,str(i))
 
 print('По Кнуту:')
 print('Самое частое число встречается',max(mas),'раз')
