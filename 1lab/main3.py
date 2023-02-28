@@ -40,3 +40,95 @@ for i in range(N):
 print(stroka)
 
 
+
+def knyt(line, template):
+    pref_for_template=pref(template) #поиск префикс-функции для шаблона
+    cnt=0
+    pos=0
+    while True:
+        
+        tline=line[pos:pos+len(template)]
+        
+        if len(template)>len(tline): #если pos будет правее, чем нужно, значит мы прошли через всю строку
+            return None,None
+        shift=comp(tline,template) #номер в массиве префикс-функции шаблона, а так же номер несовпавшего элемента в шаблоне
+        
+        if shift is not None: #если функция comp что-то вывела
+            pos+=pref_for_template[shift]+1 #сдвиг 
+        else:
+            return template,pos
+            pos+=1
+            cnt+=1
+            
+def comp(tline,template): #функция для сравнения элеметов строки и шаблона
+    for i in range(len(template)):
+        if tline[i]!=template[i]:
+            return i #если не равны выводит номер несовпавшего элемента
+    #если нет несовпавших элеметов, значит функция выводит None
+def pref(line):
+    rez=[] 
+    tline=''
+    for j in line:
+        tline+=j #формируем проверяемую строку
+        c=0
+       
+        for i in range(len(tline)-1): #-1 т.к. не должно быть равно самой строке
+            if tline[:i+1]== tline[-i-1:]: #до i-го элемента включительно и i+1 крайних элементов
+                c=i+1
+            
+            
+        rez.append(c)
+    return rez
+
+def RabinKarp(string, pattern):
+    n, m = len(string), len(pattern)    
+    count=0
+    hpattern = hash(pattern)    
+    for i in range(n-m+1):
+            hs = hash(string[i:i+m])        
+            if hs == hpattern:
+                if string[i:i+m] == pattern:                
+                    return i
+    return None
+    
+a=stroka
+maxl=0
+maxPlace=0
+mtemp=''
+for i in range(len(a)-1):
+    for j in range(i+1,len(a)):
+        
+        temp,place1=knyt(a,a[i:j]+a[i:j][::-1])
+        temp,place2= knyt(a,a[i:j]+a[i:j-1][::-1])
+        
+        if place1 is not None:
+            if j-i>maxl:
+                maxl=j-i
+                maxPlace=place1
+                mtemp=temp
+        if place2 is not None:
+            if j-i>maxl:
+                maxl=j-i
+                maxPlace=place2
+                mtemp=temp
+                
+
+print(mtemp,maxPlace)
+mas=['A','B','C','D']
+maxst=''
+
+for i in range(len(a)-1):
+    
+    for j in range(i+1,len(a)):
+        c=2
+        
+        st=a[i:j]
+        for k in a:
+            if st.count(k) %2!=0:
+                c-=1
+        if c>0:
+            
+            if len(st)>len(maxst):
+                maxst=st
+
+print(maxst,RabinKarp(a,maxst))
