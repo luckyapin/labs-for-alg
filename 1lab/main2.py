@@ -1,5 +1,3 @@
-import requests
-from bs4 import BeautifulSoup
 import re
 import time
 import boyer_for_main2
