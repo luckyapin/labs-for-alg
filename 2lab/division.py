@@ -18,5 +18,6 @@ def prime(M):
 
 line='hello world!'
 keys=[ord(i) for i in line]
-print(keys)
-print(division_alg(keys))
+print('line: ', line)
+print('keys: ', keys)
+print('hash: ',division_alg(keys))
