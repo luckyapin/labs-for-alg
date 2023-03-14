@@ -1,5 +1,4 @@
 def hashing(a):
-    
     s=0
     m=256
     for i in a:
@@ -25,6 +24,7 @@ print(hashing('ABCDEF'))
 print(hashing('ABCDEF'))
 print(hashing('ABCDFE'))
 print(hashing('DDDCCC'))
+
 print(hashtable)
 
 line=hashing('ABCDEF')
