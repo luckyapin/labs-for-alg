@@ -3,11 +3,13 @@ message='10010000011000101000011101010101001001011'
 
 #исключающее ИЛИ (работает только для данной задачи - одна длина)
 def XOR(c1,c2):
+    f = ''.join(map(str,[abs(int(c1[i]==c2[i])-1) for i in range(len(c1))]))
     return ''.join(map(str,[abs(int(c1[i]==c2[i])-1) for i in range(len(c1))]))
 
 #метод побитового сдвига
 P=bin(int('814141ab',16))[2:]
 #CRC-32
+
 
 def csc_1(message):
     i=0

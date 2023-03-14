@@ -37,7 +37,7 @@ for i in range(N):
         print(f"Пересечения {i+1} и {j+1} четырехугольника: {l}")
 
 
-print(stroka)
+print("Строка пересечений: ", stroka)
 
 
 
@@ -113,7 +113,8 @@ for i in range(len(a)-1):
                 mtemp=temp
                 
 
-print(mtemp,maxPlace)
+print("Кнут-Моррис-Пратт: ",mtemp,maxPlace)
+
 mas=['A','B','C','D']
 maxst=''
 
@@ -131,4 +132,4 @@ for i in range(len(a)-1):
             if len(st)>len(maxst):
                 maxst=st
 
-print(maxst,RabinKarp(a,maxst))
+print("Рабин-Карп: ", maxst, RabinKarp(a,maxst))
