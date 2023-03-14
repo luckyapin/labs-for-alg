@@ -11,6 +11,8 @@ def hashing(a):
 
 def finding(hash,a):
     while hashtable[hash]:
+        if hashtable[hash]==a:
+            break
         hash=(hash+1)%256
     hashtable[hash]=a
     return hash
@@ -19,6 +21,7 @@ def finding(hash,a):
 m=256
 hashtable=[0]*m
 
+print(hashing('ABCDEF'))
 print(hashing('ABCDEF'))
 print(hashing('ABCDFE'))
 print(hashing('DDDCCC'))
