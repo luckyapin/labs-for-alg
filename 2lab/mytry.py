@@ -7,7 +7,6 @@ def hashing(a):
     
     return finding(hash,a)
 
-
 def finding(hash,a):
     while hashtable[hash]:
         if hashtable[hash]==a:
