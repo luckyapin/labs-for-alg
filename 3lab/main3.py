@@ -2,7 +2,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import dijkstra
 
-start=int(input('введите стартовую точку: '))
+
 
 n=float('inf')
 #граф улиц
@@ -20,7 +20,8 @@ streets = [
     [n, n, n, n, n, n, 0.8, n, n, 0.4, n]
     ]
 
-min_len,graph=dijkstra.result(streets,start)
+start = int(input('введите стартовую точку: '))
+min_len, graph = dijkstra.result(streets,start)
 
 print('минимальный маршрут от стартовой до любой другой: ', min_len)
 
@@ -28,9 +29,9 @@ G = nx.Graph()
 
 #добавление вершин на граф. а - первая координата, б - вторая, wght - вес, взятый из улиц
 for i in range(len(graph)):
-    a=graph[i][0]
-    b=graph[i][1]
-    wght=streets[a][b]
+    a = graph[i][0]
+    b = graph[i][1]
+    wght = streets[a][b]
     
     if wght != float('inf'):
         G.add_edge(str(a), str(b), weight=wght)
