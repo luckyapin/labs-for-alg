@@ -5,14 +5,19 @@ import dijkstra
 start=int(input('введите стартовую точку: '))
 
 n=float('inf')
-# сюда нужно будет подать все улицы
-streets = [
-        [n, 10, 18, 8, n, n],
-        [10, n, 16, 9, 21, n],
-        [n, 16, n, n, 15, n],
-        [7, 9, n, n, n, 12],
-        [n, n, n, n, n, 23],
-        [n, n, 15, n, 23, n]
+#граф улиц
+streets = [ 
+    [n, 1, 1, 0.8, 0.5, n, n, n, n, n, n, n],
+    [1, n, n, n, n, 1, n, n, n, n, n,],
+    [1, n, n, n, n, 0.3, 0.6, n, n, n, n],
+    [0.8, n, n, n, n, n, 0.7, 0.8, n, 0.5, n],
+    [0.5, n, n, n, n, n, n, 0.6, n, n, n,],
+    [n, 1, 0.3, n, n, n, n, n, n, n, n],
+    [n, n, 0.6, 0.7, n, n, n, n, n, n, 0.8],
+    [n, n, n, 0.8, 0.6, n, n, n, 0.5, n, n],
+    [n, n, n, n, n, n, n, 0.5, n, 0.7, n],
+    [n, n, n, 0.5, n, n, n, n, 0.7, n, 0.4],
+    [n, n, n, n, n, n, 0.8, n, n, 0.4, n]
     ]
 
 min_len,graph=dijkstra.result(streets,start)
@@ -20,9 +25,7 @@ min_len,graph=dijkstra.result(streets,start)
 print('минимальный маршрут от стартовой до любой другой: ', min_len)
 
 G = nx.Graph()
-#объявление имен вершин
-nodes = ["0", "1", "2", "3", "4", "5"]
-G.add_nodes_from(nodes)
+
 #добавление вершин на граф. а - первая координата, б - вторая, wght - вес, взятый из улиц
 for i in range(len(graph)):
     a=graph[i][0]
