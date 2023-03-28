@@ -1,3 +1,4 @@
+import random
 def sr(i,j,k):
     mn=float('inf')
     if i-1>=0:
@@ -25,7 +26,7 @@ for i in range(x):
         arr[i].append([])
         rez[i].append([])
         for k in range(z):
-            arr[i][j].append(1)
+            arr[i][j].append(random.randint(1,100))
             rez[i][j].append(0)
 
 print(arr)
