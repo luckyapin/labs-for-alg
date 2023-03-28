@@ -1,12 +1,38 @@
 import random
 
-
 #кубик нижняя грань 4 на 2, высота - 3,
 X=2
 Y=3
 Z=4
 
-array=[[[random.randint(1,10) for _ in range(Z)] for _ in range(Y)] for _ in range(X)]
+ar=[[[random.randint(1,10) for _ in range(Z)] for _ in range(Y)] for _ in range(X)]
 
 
-print(array)
+min_len=ar[0][0][0] #минимальная длина (храним зн-е 1 элем.)
+t=(0,0,0) #начальная точка
+
+# цикл - идем по кубику, пока не придем к точке по диагонале
+while not(t[0]==X-1 and t[1]==Y-1 and t[2]==Z-1):
+    t1,t2,t3=float('inf'),float('inf'),float('inf') #зн-я точек, в которые можно двигаться
+
+    #прописываем ходы с условиями (чтобы не выйти за куб)
+    if t[0]+1<=X-1: t1=ar[t[0]+1][t[1]][t[2]]
+    if t[2]+1<=Z-1: t2=ar[t[0]][t[1]][t[2]+1]
+    if t[1]+1<=Y-1: t3=ar[t[0]][t[1]+1][t[2]]
+
+    #ищем минимальный элемент
+    min_t=min(t1,t2,t3)
+
+    #суммируем к минимальной длине зн-е текущей точки, проверяем
+    min_len+=min_t
+    if t1!=float('inf') and t1==min_t:
+        t=(t[0]+1,t[1],t[2])
+    if t2!=float('inf') and t2==min_t:
+        t=(t[0],t[1],t[2]+1)
+    if t3!=float('inf') and t3==min_t:
+        t=(t[0],t[1]+1,t[2])
+
+    print(f"Точка - {t}, Ее значение - {ar[t[0]][t[1]][t[2]]}")
+
+print(f"Сам куб - {ar}")
+print(f"Минимальная сумма точек, по которым прошлись (путь) - {min_len}")
