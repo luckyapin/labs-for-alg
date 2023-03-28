@@ -4,7 +4,7 @@ def newd(streets,i):
     for j in range(len(d)):
         if not d[j][1]: #Если вершина ней пройдена
 
-            tekmin = min(d[j][0], d[i][0] + streets[i][j]) 
+            tekmin = min(d[j][0], round(d[i][0] + streets[i][j],1)) 
             if  (d[i][0] + streets[i][j]) < d[j][0]: 
                 d[j][2] = i #Для сохранения откуда мы пришли в эту точку
             d[j][0] = tekmin
