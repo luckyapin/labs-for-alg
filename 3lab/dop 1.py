@@ -46,3 +46,4 @@ if __name__ == "__main__":
     print(array)
     shortest_path = greedy_shortest_path(array, X, Y, Z)
     print("Shortest path:", shortest_path)
+

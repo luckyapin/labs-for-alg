@@ -1,9 +1,9 @@
 import random
 
-#кубик нижняя грань 4 на 2, высота - 3,
-X=2
+#кубик нижняя грань 4 на 2, высота - 3, 2,3,4
+X=3
 Y=3
-Z=4
+Z=3
 
 #генерируем кубик
 ar=[[[random.randint(1,10) for _ in range(Z)] for _ in range(Y)] for _ in range(X)]
@@ -11,7 +11,7 @@ ar=[[[random.randint(1,10) for _ in range(Z)] for _ in range(Y)] for _ in range(
 min_len=ar[0][0][0] #минимальная длина (храним зн-е 1 элем.)
 t=(0,0,0) #начальная точка
 
-
+print(f"Точка - {t}, Ее значение - {ar[t[0]][t[1]][t[2]]}")
 # цикл - идем по кубику, пока не придем к точке по диагонале
 while not(t[0]==X-1 and t[1]==Y-1 and t[2]==Z-1):
     t1,t2,t3=float('inf'),float('inf'),float('inf') #зн-я точек, в которые можно двигаться
