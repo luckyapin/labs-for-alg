@@ -39,7 +39,7 @@ for i in range(x):
         rez[i].append([])
         for k in range(z):
             arr[i][j].append(random.randint(1,100))
-            rez[i][j].append(0)
+            rez[i][j].append(float('inf'))
 for i in range(x):
     print()
     for j in range(y):
@@ -60,6 +60,6 @@ rezpath=[a]
 while a!='0,0,0':
     a=path[a]
     rezpath.append(a)
-print(rez)
+
 print('Путь: ',list(reversed(rezpath)))
 print('Итоговая сумма: ', rez[x-1][y-1][z-1])
