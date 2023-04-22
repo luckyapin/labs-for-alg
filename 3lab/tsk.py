@@ -21,7 +21,6 @@ while not(t[0]==X-1 and t[1]==Y-1 and t[2]==Z-1):
     if t[2]+1<=Z-1: t2=ar[t[0]][t[1]][t[2]+1]
     if t[1]+1<=Y-1: t3=ar[t[0]][t[1]+1][t[2]]
 
-
     #ищем минимальный элемент
     min_t=min(t1,t2,t3)
 
@@ -33,6 +32,7 @@ while not(t[0]==X-1 and t[1]==Y-1 and t[2]==Z-1):
         t=(t[0],t[1],t[2]+1)
     if t3!=float('inf') and t3==min_t:
         t=(t[0],t[1]+1,t[2])
+
 
     print(f"Точка - {t}, Ее значение - {ar[t[0]][t[1]][t[2]]}")
 
