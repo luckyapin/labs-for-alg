@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f4d8c975-ca2b-4f40-9d4b-6b726807e615" name="Changes" comment="new">
-      <change afterPath="$PROJECT_DIR$/4lab/2.1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4lab/2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3lab/tsk.py" beforeDir="false" afterPath="$PROJECT_DIR$/3lab/tsk.py" afterDir="false" />
-    </list>
+    <list default="true" id="f4d8c975-ca2b-4f40-9d4b-6b726807e615" name="Changes" comment="new" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -234,7 +230,28 @@
       <option name="project" value="LOCAL" />
       <updated>1679991017883</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="new">
+      <created>1682004442507</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1682004442508</updated>
+    </task>
+    <task id="LOCAL-00012" summary="new">
+      <created>1682004556122</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1682004556122</updated>
+    </task>
+    <task id="LOCAL-00013" summary="new">
+      <created>1682004588181</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1682004588181</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
