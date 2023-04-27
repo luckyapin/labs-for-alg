@@ -1,4 +1,3 @@
-
 def max_expression(A):
     n = len(A)
     dp = [[0] * n for _ in range(4)]
