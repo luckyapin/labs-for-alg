@@ -43,10 +43,11 @@ def split_array(A):
 
 
 # пример
-A = [2, 1, 4, 1, 2, 3, 5, 1]
+A = [2, 1, 4, 2, 3, 5,2,3,5]
 A1, A2, min_diff = split_array(A)
 print("A1 -", A1,"Сумма -",sum(A1))
 print("A2 -", A2,"Сумма -",sum(A2))
 print("Разница -",min_diff)
+
 
 
