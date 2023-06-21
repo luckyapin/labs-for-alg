@@ -17,8 +17,9 @@ def add(element, number):
         stec[place]=element
         
     print(stec)
+
+
 def delete(number):
-    
     for i in range(len(stec)-1, 0-1, -3):
         place=i-number+1
         if stec[place]!=0:
@@ -28,7 +29,7 @@ def delete(number):
             return a
         
     
-stec=[0,0,0]
+stec=[0, 0, 0 ]
 add(1,1)
 add(2,1)
 add(3,1)
@@ -38,10 +39,10 @@ add(1,3)
 add(3,2)
 add(2,3)
 
-print(delete(3))
-print(delete(2))
-print(delete(3))
-print(delete(1))
-print(delete(1))
-print(delete(1))
-print(delete(1))
+delete(3)
+delete(2)
+delete(3)
+delete(1)
+delete(1)
+delete(1)
+delete(1)
