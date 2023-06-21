@@ -26,9 +26,9 @@ ye = exponential_smoothing(y1, 0.4)
 ym = moving_average(y1, window_len)
 yu = UKF(y1, d, r, en)
 
-print(erf(y, ye))
-print(erf(y[window_len:-window_len], ym))
-print(erf(y, yu))
+print(f"Экспонинциальное сглаживание - {round(erf(y, ye) * 100,3)}%" )
+print(f"Скользящее средне - {round(erf(y[window_len:-window_len], ym) * 100,3)}%")
+print(f"Фильтр Калмана - {round(erf(y, yu) * 100,3)}%")
 
 sp = plt.subplot(221)
 plt.plot(x, y1)

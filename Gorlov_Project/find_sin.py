@@ -13,6 +13,7 @@ x=np.arange(-20, 20, dx)
 d=0.2
 r=1
 en=lambda i: np.cos(x[i])*dx*10
+window_len=50
 
 y = [np.sin(x[0])]
 for i in range(1,len(x)):
@@ -22,12 +23,12 @@ y1=[i + random.normalvariate(0, d) for i in y]
 
 
 ye = exponential_smoothing(y1, 0.037)
-ym = moving_average(y1, 50)
+ym = moving_average(y1, window_len)
 yu = UKF(y1, d, r, en)
 
-print(erf(y, ye))
-print(erf(y[50:-50], ym))
-print(erf(y, yu))
+print(f"Экспонинциальное сглаживание - {round(erf(y, ye) * 100,3)}%" )
+print(f"Скользящее средне - {round(erf(y[window_len:-window_len], ym) * 100,3)}%")
+print(f"Фильтр Калмана - {round(erf(y, yu) * 100,3)}%")
 
 sp = plt.subplot(221)
 plt.plot(x, y1)
@@ -50,7 +51,7 @@ plt.grid(True)
 sp = plt.subplot(224)
 plt.plot(x, y1)
 plt.plot(x, yu)
-plt.title('фильтр Калмана')
+plt.title('Фильтр Калмана')
 plt.grid(True)
 
 plt.show()
